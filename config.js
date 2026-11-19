@@ -1,6 +1,6 @@
-// Configure apenas com a chave anon/public do Supabase.
-// Nunca coloque service_role ou qualquer segredo neste arquivo.
+// Chave publica do Supabase (segura para uso no navegador).
+// Nunca coloque service_role ou chaves secretas neste arquivo.
 window.CAPITAL_CONFIG = {
   supabaseUrl: "https://hjtauumjxanryzfcodfw.supabase.co",
-  supabaseAnonKey: "COLE_AQUI_SUA_CHAVE_ANON_PUBLIC"
+  supabaseAnonKey: "sb_publishable_26zk2vLTFsQJoUu5B8h9Qg_rSVYUz_8"
 };
