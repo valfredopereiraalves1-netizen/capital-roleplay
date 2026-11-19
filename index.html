@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Capital Roleplay — viva uma nova experiência de roleplay no Roblox.">
+  <title>Capital Roleplay | Roblox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient"></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Capital Roleplay início">
+      <span class="brand-mark">C</span><span>CAPITAL <small>ROLEPLAY</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <nav id="navigation">
+      <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#departamentos">Departamentos</a><a href="#comunicados">Comunicados</a>
+      <a class="nav-cta" href="#inscricao">Faça parte</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> UMA NOVA EXPERIÊNCIA NO ROBLOX</div>
+        <h1>SUA HISTÓRIA.<br><em>SUA CAPITAL.</em></h1>
+        <p>Entre em uma cidade onde cada escolha constrói sua trajetória. Assuma responsabilidades, faça parte de uma equipe e viva o roleplay.</p>
+        <div class="hero-actions"><a class="button button-gold" href="#inscricao">Quero participar <span>↗</span></a><a class="text-link" href="#sobre">Conheça a cidade <span>↓</span></a></div>
+      </div>
+      <div class="hero-art" aria-label="Identidade visual Capital Roleplay">
+        <div class="seal"><div class="seal-inner"><span class="seal-top">CAPITAL</span><strong>C</strong><span class="seal-bottom">ROLEPLAY • ROBLOX</span></div></div>
+        <div class="art-caption"><span>EST. 2026</span><span>BRASIL • ROBLOX</span></div>
+      </div>
+      <div class="hero-foot"><span>ROLEPLAY COM PROPÓSITO</span><span>01 / 04</span></div>
+    </section>
+
+    <section class="intro section-wrap" id="sobre">
+      <div class="section-kicker">01 — A CAPITAL</div>
+      <div><h2>Mais que um jogo.<br><em>Uma comunidade.</em></h2><p>A Capital Roleplay reúne pessoas que valorizam organização, respeito e boas histórias. Aqui, você pode desenvolver sua jornada, conhecer novos jogadores e contribuir para uma cidade ativa.</p></div>
+    </section>
+
+    <section class="departments section-wrap" id="departamentos">
+      <div class="section-heading"><div><div class="section-kicker">02 — ESTRUTURA</div><h2>Faça parte de algo <em>maior.</em></h2></div><p>Conheça algumas das áreas que compõem nossa cidade.</p></div>
+      <div class="department-grid">
+        <article class="department-card"><span>01</span><div class="dept-icon">✦</div><h3>Segurança pública</h3><p>Atuação responsável na proteção e organização da cidade.</p></article>
+        <article class="department-card"><span>02</span><div class="dept-icon">✚</div><h3>Saúde</h3><p>Atendimento, cuidado e suporte à população.</p></article>
+        <article class="department-card"><span>03</span><div class="dept-icon">⚖</div><h3>Justiça e governo</h3><p>Instituições que ajudam a manter a cidade funcionando.</p></article>
+        <article class="department-card"><span>04</span><div class="dept-icon">⌂</div><h3>Serviços e comunidade</h3><p>Participe da construção de uma experiência completa.</p></article>
+      </div>
+    </section>
+
+    <section class="announcements section-wrap" id="comunicados">
+      <div class="section-heading"><div><div class="section-kicker">03 — NOVIDADES</div><h2>Central de <em>comunicados.</em></h2></div><p>Fique por dentro das atualizações oficiais da Capital.</p></div>
+      <div id="announcementList" class="announcement-list"><div class="empty-state">Os comunicados oficiais aparecerão aqui.</div></div>
+    </section>
+
+    <section class="join section-wrap" id="inscricao">
+      <div class="join-panel"><div class="section-kicker">04 — FAÇA PARTE</div><h2>Sua jornada<br>começa <em>agora.</em></h2><p>Preencha sua inscrição para demonstrar interesse em participar da Capital Roleplay.</p>
+        <form id="applicationForm">
+          <label>Usuário do Roblox<input name="roblox_username" required minlength="1" maxlength="40" placeholder="Seu nome no Roblox"></label>
+          <label>Usuário do Discord <small>(opcional)</small><input name="discord_tag" maxlength="60" placeholder="@seuusuario"></label>
+          <label>Área de interesse<input name="department" required maxlength="80" placeholder="Ex.: Polícia Militar, SAMU, Governo..."></label>
+          <label>Por que deseja participar?<textarea name="reason" required minlength="10" maxlength="600" rows="4" placeholder="Conte um pouco sobre seu interesse..."></textarea></label>
+          <button class="button button-gold" type="submit">Enviar inscrição <span>↗</span></button>
+          <p class="form-feedback" id="formFeedback" role="status"></p>
+        </form>
+      </div>
+      <aside class="join-aside"><span class="aside-number">CR / 2026</span><h3>Respeito.<br>Compromisso.<br><em>Excelência.</em></h3><div class="gold-line"></div><p>Capital Roleplay<br>Uma cidade. Muitas histórias.</p></aside>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#inicio"><span class="brand-mark">C</span><span>CAPITAL <small>ROLEPLAY</small></span></a><span>© 2026 CAPITAL ROLEPLAY. COMUNIDADE ROBLOX.</span><a href="admin.html">Área administrativa ↗</a></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
