@@ -45,9 +45,36 @@ h1 span{display:block;margin-top:13px;background:var(--text-gradient);background
 @keyframes ring{0%,100%{transform:scale(.96);opacity:.5}50%{transform:scale(1.04);opacity:.95}}
 @media(max-width:600px){.entry{padding:24px 18px}.backdrop{background-position:54% center}.entry:after{inset:10px}.glow-ring{width:110vw}.kicker{font-size:8px;letter-spacing:.23em}.kicker:before,.kicker:after{width:22px}.subtitle{max-width:290px;line-height:1.9;letter-spacing:.17em}.enter{min-width:210px;min-height:57px;margin-top:38px}.footer-note{bottom:22px;font-size:8px;letter-spacing:.15em}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.content{opacity:1;transform:none;filter:none}.backdrop{transform:scale(1.08)}}
+
+/* Tela de carregamento inspirada na referência do jogo para PC */
+.loading-screen{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;overflow:hidden;background:#090711;color:#fff;animation:loader-dismiss .7s ease 1.35s forwards;pointer-events:none}
+.loading-screen:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(12,8,20,.92),rgba(18,8,25,.68),rgba(9,7,18,.9)),url("20261115_091306.jpeg") center/cover no-repeat;transform:scale(1.035);animation:loader-image 8s ease-in-out infinite alternate}
+.loading-screen:after{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.12);pointer-events:none}
+.loading-inner{position:relative;z-index:1;width:min(420px,calc(100% - 56px));text-align:center;animation:loader-arrive .75s cubic-bezier(.2,.7,.2,1) both}
+.loading-brand{font-family:var(--display);font-size:clamp(42px,9vw,66px);line-height:.9;letter-spacing:.04em}
+.loading-brand span{display:block;margin-top:7px;background:var(--text-gradient);background-clip:text;-webkit-background-clip:text;color:transparent}
+.loading-caption{margin:24px 0 18px;color:rgba(255,255,255,.72);font-size:9px;font-weight:800;letter-spacing:.28em;text-transform:uppercase}
+.loading-track{height:3px;width:100%;overflow:hidden;background:rgba(255,255,255,.16)}
+.loading-track span{display:block;width:38%;height:100%;background:var(--line-gradient);box-shadow:0 0 16px hsl(var(--pink) / .7);animation:loader-progress 1.15s cubic-bezier(.45,0,.55,1) infinite}
+.loading-foot{margin-top:14px;color:rgba(255,255,255,.46);font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+@keyframes loader-progress{0%{transform:translateX(-110%)}100%{transform:translateX(290%)}}
+@keyframes loader-image{from{transform:scale(1.035) translate3d(-.5%,0,0)}to{transform:scale(1.12) translate3d(.5%,-.5%,0)}}
+@keyframes loader-arrive{from{opacity:0;transform:translateY(15px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes loader-dismiss{to{opacity:0;visibility:hidden}}
+@media(max-width:600px){.loading-screen:after{inset:10px}.loading-caption{font-size:8px;letter-spacing:.2em}}
+@media(prefers-reduced-motion:reduce){.loading-screen{animation:loader-dismiss .25s ease .15s forwards}.loading-screen:before,.loading-track span,.loading-inner{animation:none!important}}
+
 </style>
 </head>
 <body>
+<div class="loading-screen" role="status" aria-label="Carregando Capital Roleplay">
+ <div class="loading-inner">
+  <div class="loading-brand">CAPITAL <span>ROLEPLAY</span></div>
+  <p class="loading-caption">Preparando sua experiência</p>
+  <div class="loading-track" aria-hidden="true"><span></span></div>
+  <p class="loading-foot">Portal oficial · Roblox Roleplay</p>
+ </div>
+</div>
 <main class="entry">
  <div class="backdrop" aria-hidden="true"></div>
  <div class="grid" aria-hidden="true"></div>
