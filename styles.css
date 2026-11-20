@@ -124,12 +124,12 @@ body{background:radial-gradient(ellipse at 50% -20%,rgba(37,91,176,.13),transpar
   --line:hsl(0 0% 100% / .1);
   --white:hsl(0 0% 100%);
   --muted:hsl(270 15% 70%);
-  --pink:hsl(325 100% 62%);
-  --orange:hsl(22 100% 62%);
-  --violet:hsl(268 80% 62%);
-  --gold:hsl(44 100% 65%);
-  --blue:var(--pink);
-  --blue-light:var(--pink);
+  --pink:325 100% 62%;
+  --orange:22 100% 62%;
+  --violet:268 80% 62%;
+  --gold:44 100% 65%;
+  --blue:hsl(var(--pink));
+  --blue-light:hsl(330 100% 78%);
   --sunset:linear-gradient(160deg,hsl(var(--orange)) 0%,hsl(var(--pink)) 48%,hsl(var(--violet)) 100%);
   --text-gradient:linear-gradient(135deg,hsl(30 100% 68%) 0%,hsl(330 100% 66%) 50%,hsl(280 100% 80%) 100%);
   --line-gradient:linear-gradient(90deg,hsl(var(--orange)),hsl(var(--pink)),hsl(var(--violet)));
