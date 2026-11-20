@@ -55,6 +55,50 @@
     logoutButton.disabled = false;
     await refreshAccount();
   });
+  const products = Array.isArray(window.CAPITAL_PRODUCTS) ? window.CAPITAL_PRODUCTS : [];
+  const productGrid = document.getElementById("productGrid");
+  function renderProducts() {
+    if (!products.length) return;
+    productGrid.replaceChildren();
+    products.forEach((product, index) => {
+      const card = document.createElement("article");
+      card.className = "store-card";
+      const title = document.createElement("h2");
+      title.textContent = product.name || "Produto";
+      const description = document.createElement("p");
+      description.textContent = product.description || "Consulte os detalhes com a equipe.";
+      const price = document.createElement("strong");
+      price.className = "store-price";
+      price.textContent = product.price || "Valor a combinar";
+      const buy = document.createElement("button");
+      buy.className = "store-button";
+      buy.type = "button";
+      buy.textContent = "Ver produtos para comprar";
+      buy.addEventListener("click", async () => {
+        const { data: { session } } = await db.auth.getSession();
+        if (!session) {
+          feedback.textContent = "Entre com Discord antes de iniciar uma compra.";
+          return;
+        }
+        buy.disabled = true;
+        feedback.textContent = "Enviando sua solicitação para a equipe…";
+        try {
+          const { data, error } = await db.functions.invoke("open-purchase-ticket", {
+            body: { productName: product.name, price: product.price || "A confirmar" }
+          });
+          if (error) throw error;
+          feedback.textContent = data?.message || "Solicitação enviada. Confira seu Discord em instantes.";
+        } catch (_error) {
+          feedback.textContent = "Não foi possível abrir o ticket. Verifique se a integração foi ativada e tente novamente.";
+        } finally {
+          buy.disabled = false;
+        }
+      });
+      card.append(title, description, price, buy);
+      productGrid.append(card);
+    });
+  }
+  renderProducts();
   db.auth.onAuthStateChange(() => refreshAccount());
   refreshAccount();
 })();
