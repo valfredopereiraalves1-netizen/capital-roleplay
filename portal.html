@@ -149,12 +149,7 @@
  </section>
 </main>
 <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="portal.html"><span class="brand-name">CAPITAL <span>ROLEPLAY</span></span></a><span>© 2026 Capital Roleplay</span><a href="admin.html">Área administrativa</a></div></footer>
-<script>
-const menu=document.getElementById('menuToggle');
-const nav=document.getElementById('navigation');
-menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');});
-nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');menu?.setAttribute('aria-label','Abrir menu');menu?.setAttribute('aria-label','Abrir menu');}));
-</script>
+
 <script>
 (async function loadCapitalDiscordWidget(){
  const endpoint="https://discord.com/api/guilds/1553568779282419764/widget.json";
@@ -196,5 +191,5 @@ nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.
  }
 })();
 </script>
-<script src="motion.js" defer></script></body>
+<script src="motion.js" defer></script><script src="navigation.js" defer></script></body>
 </html>
