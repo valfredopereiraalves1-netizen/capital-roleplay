@@ -499,20 +499,38 @@ body::before{
 }
 
 
-/* Cordões de luz decorativos — lâmpadas penduradas no topo */
-body::after{
- content:"";position:fixed;z-index:8;top:-2px;left:0;width:100%;height:138px;
+
+
+/* Cordão de lâmpadas decorativas no topo do portal */
+.party-lights{
+ position:fixed;z-index:1000;top:0;left:0;width:100%;height:142px;
  pointer-events:none;transform-origin:50% 0;
- background-repeat:no-repeat;background-position:top center;background-size:100% 100%;
- background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 138' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cfilter id='g' x='-150%25' y='-150%25' width='400%25' height='400%25'%3E%3CfeGaussianBlur stdDeviation='5' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M0 5 Q180 76 360 20 T720 24 T1080 18 T1440 8' fill='none' stroke='%23d9b8df' stroke-opacity='.7' stroke-width='2'/%3E%3Cg filter='url(%23g)' stroke='%23f2d8ee' stroke-width='1.5'%3E%3Cpath d='M90 38v15 M270 39v16 M450 32v17 M630 24v17 M810 28v17 M990 27v17 M1170 19v17 M1350 12v17'/%3E%3Ccircle cx='90' cy='59' r='7' fill='%23ff8acb'/%3E%3Ccircle cx='270' cy='61' r='7' fill='%23ffc078'/%3E%3Ccircle cx='450' cy='55' r='7' fill='%23c5a0ff'/%3E%3Ccircle cx='630' cy='47' r='7' fill='%23ff8acb'/%3E%3Ccircle cx='810' cy='51' r='7' fill='%23ffc078'/%3E%3Ccircle cx='990' cy='50' r='7' fill='%23c5a0ff'/%3E%3Ccircle cx='1170' cy='42' r='7' fill='%23ff8acb'/%3E%3Ccircle cx='1350' cy='35' r='7' fill='%23ffc078'/%3E%3C/g%3E%3C/svg%3E");
- animation:cr-party-lights-sway 6.5s ease-in-out infinite alternate;
+ animation:party-string-swing 5.2s ease-in-out infinite alternate;
 }
-@keyframes cr-party-lights-sway{
- 0%{transform:rotate(-1.1deg) translateX(-5px)}
- 50%{transform:rotate(.65deg) translateX(3px)}
- 100%{transform:rotate(1.15deg) translateX(6px)}
+.party-lights svg{display:block;width:100%;height:100%;overflow:visible}
+.party-wire{fill:none;stroke:rgba(245,218,255,.88);stroke-width:2.2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 4px rgba(224,170,255,.65))}
+.bulb path{fill:none;stroke:rgba(255,231,255,.9);stroke-width:2.4;vector-effect:non-scaling-stroke}
+.bulb ellipse{stroke:rgba(255,255,255,.9);stroke-width:1.2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 7px currentColor)}
+.bulb-pink{color:#ff75c8;fill:#ff75c8}
+.bulb-gold{color:#ffc36e;fill:#ffc36e}
+.bulb-violet{color:#b99aff;fill:#b99aff}
+.bulb-pink ellipse{fill:#ff75c8}
+.bulb-gold ellipse{fill:#ffc36e}
+.bulb-violet ellipse{fill:#b99aff}
+.bulb:nth-child(odd){animation:party-bulb-glow 1.8s ease-in-out infinite alternate}
+.bulb:nth-child(even){animation:party-bulb-glow 2.4s ease-in-out infinite alternate-reverse}
+@keyframes party-string-swing{
+ 0%{transform:rotate(-1.25deg) translateX(-7px)}
+ 50%{transform:rotate(.55deg) translateX(2px)}
+ 100%{transform:rotate(1.25deg) translateX(7px)}
+}
+@keyframes party-bulb-glow{
+ from{opacity:.68;filter:brightness(.82)}
+ to{opacity:1;filter:brightness(1.35)}
 }
 @media(max-width:680px){
- body::after{height:88px;background-size:150% 100%;background-position:top center;opacity:.9}
+ .party-lights{height:104px;width:130%;left:-15%;animation-duration:5.8s}
 }
-@media(prefers-reduced-motion:reduce){body::after{animation:none!important}}
+@media(prefers-reduced-motion:reduce){
+ .party-lights,.bulb{animation:none!important}
+}
