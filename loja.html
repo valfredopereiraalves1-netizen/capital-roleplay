@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d0714">
+<meta name="description" content="Loja oficial da Capital Roleplay.">
+<title>Loja | Capital Roleplay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.store-main{min-height:72vh;padding:clamp(52px,8vw,90px) 0 80px}
+.store-head{max-width:760px;margin:0 auto 34px;text-align:center}
+.store-head h1{margin:12px 0 14px;font-family:var(--font-display);font-size:clamp(42px,7vw,72px);line-height:.98;text-transform:uppercase;background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.store-head p:last-child{color:var(--muted);font-size:13px;line-height:1.8}
+.store-account{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:900px;margin:0 auto 24px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,hsl(var(--pink) / .07),hsl(var(--violet) / .1))}
+.store-user{display:flex;align-items:center;gap:12px;min-width:0}
+.store-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;background:hsl(var(--violet) / .2)}
+.store-user strong{display:block;color:var(--white);font-size:13px}
+.store-user small{display:block;margin-top:4px;color:var(--muted);font-size:11px}
+.store-button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border:1px solid hsl(var(--pink) / .35);border-radius:7px;background:var(--sunset);color:white;font:700 12px Inter,sans-serif;cursor:pointer}
+.store-button.secondary{background:transparent;color:var(--text);border-color:var(--line)}
+.store-button:disabled{opacity:.55;cursor:wait}
+.store-feedback{max-width:900px;margin:0 auto 20px;color:var(--muted);font-size:12px;line-height:1.7;text-align:center}
+.store-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:900px;margin:auto}
+.store-empty{grid-column:1/-1;padding:34px 24px;border:1px dashed hsl(var(--pink) / .3);border-radius:12px;text-align:center;background:hsl(var(--violet) / .06)}
+.store-empty h2{margin:0 0 10px;color:var(--white);font-family:var(--font-display);font-size:30px;font-weight:400}
+.store-empty p{margin:0;color:var(--muted);font-size:12px;line-height:1.8}
+.store-card{padding:22px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,hsl(268 35% 12% / .94),hsl(262 50% 5% / .97))}
+.store-card h2{margin:0 0 8px;color:var(--white);font-size:16px}
+.store-card p{color:var(--muted);font-size:12px;line-height:1.7}
+.store-price{display:block;margin:18px 0;color:#fff;font-size:20px;font-weight:800}
+@media(max-width:560px){.store-account{align-items:stretch;flex-direction:column}.store-button{width:100%}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="portal.html" aria-label="Capital Roleplay — início"><span class="brand-name">CAPITAL <span>ROLEPLAY</span></span></a>
+<button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navigation"><svg class="ui-icon menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<nav id="navigation" aria-label="Navegação principal"><a href="portal.html">Início</a><a href="departamentos.html">Departamentos</a><a href="comunicados.html">Comunicados</a><a class="active" href="loja.html" aria-current="page">Loja</a><a href="inscricoes.html" class="nav-cta">Inscrições</a></nav>
+</div></header>
+<main class="store-main">
+<div class="container">
+<div class="store-head"><p class="eyebrow">CAPITAL ROLEPLAY · LOJA OFICIAL</p><h1>Central de vendas</h1><p>Entre com sua conta Discord para falar com a equipe e iniciar um atendimento de compra com segurança.</p></div>
+<section class="store-account" aria-label="Conta Discord">
+<div class="store-user"><img class="store-avatar" id="accountAvatar" alt="" hidden><div><strong id="accountName">Você ainda não entrou</strong><small id="accountStatus">Entre com Discord para continuar.</small></div></div>
+<div><button class="store-button" id="discordLogin">Entrar com Discord</button><button class="store-button secondary" id="discordLogout" hidden>Sair</button></div>
+</section>
+<p class="store-feedback" id="storeFeedback" role="status" aria-live="polite">O catálogo oficial será exibido aqui assim que os produtos e valores forem cadastrados.</p>
+<section class="store-grid" id="productGrid" aria-label="Produtos disponíveis">
+<article class="store-empty"><h2>Catálogo em preparação</h2><p>Estamos organizando os produtos e as informações de cada oferta. Em breve, você poderá selecionar um produto e abrir um ticket de compra diretamente no Discord.</p></article>
+</section>
+</div>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="portal.html"><span class="brand-name">CAPITAL <span>ROLEPLAY</span></span></a><span>© 2026 Capital Roleplay</span><a href="https://discord.gg/QbeEnRxfF" target="_blank" rel="noopener noreferrer">Discord oficial</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="loja.js"></script>
+<script src="motion.js" defer></script>
+<script>
+const menu=document.getElementById('menuToggle'),nav=document.getElementById('navigation');
+menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');}));
+</script>
+</body></html>
