@@ -13,7 +13,7 @@
     return;
   }
   const db = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
-  const redirectTo = window.location.origin + window.location.pathname;
+  const redirectTo = "https://valfredopereiraalves1-netizen.github.io/capital-roleplay/loja.html";
   async function refreshAccount() {
     const { data: { session }, error } = await db.auth.getSession();
     if (error) feedback.textContent = "Não foi possível verificar sua sessão. Atualize a página.";
