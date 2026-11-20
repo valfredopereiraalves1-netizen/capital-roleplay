@@ -12,13 +12,34 @@
 
 <style>
 .discord-community{position:relative;z-index:1;padding:78px 0;border-bottom:1px solid var(--line);background:linear-gradient(115deg,hsl(268 35% 10% / .72),hsl(262 50% 5% / .92))}
-.discord-community-inner{display:grid;grid-template-columns:minmax(0,1fr) 350px;align-items:center;gap:64px}
+.discord-community-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,430px);align-items:center;gap:54px}
 .discord-community-copy{max-width:590px}
 .discord-community-copy h2{margin:14px 0 16px;font-family:var(--font-display);font-size:clamp(38px,5vw,58px);line-height:.98;text-transform:uppercase;background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
 .discord-community-copy>p:not(.eyebrow){max-width:480px;margin:0 0 25px;color:var(--muted);font-size:13px;line-height:1.9}
-.discord-widget-frame{width:350px;max-width:100%;height:500px;overflow:hidden;border:1px solid hsl(var(--pink) / .28);border-radius:12px;background:#1b1c24;box-shadow:0 20px 55px rgba(0,0,0,.35),0 0 28px hsl(var(--violet) / .1)}
-.discord-widget-frame iframe{display:block;width:100%;height:100%;border:0}
-@media(max-width:760px){.discord-community{padding:58px 0}.discord-community-inner{grid-template-columns:1fr;gap:30px}.discord-widget-frame{width:100%;max-width:350px;margin-inline:auto}}
+.discord-live-card{width:100%;overflow:hidden;border:1px solid hsl(var(--pink) / .28);border-radius:14px;background:linear-gradient(145deg,#20212b,#15141e);box-shadow:0 20px 55px rgba(0,0,0,.35),0 0 28px hsl(var(--violet) / .1)}
+.discord-live-head{display:flex;align-items:center;gap:13px;padding:20px;border-bottom:1px solid rgba(255,255,255,.09)}
+.discord-live-mark{display:grid;place-items:center;width:46px;height:46px;flex:0 0 46px;border-radius:12px;background:#5865f2;color:white}
+.discord-live-mark svg{width:27px;height:27px;fill:currentColor}
+.discord-live-title{min-width:0;flex:1}
+.discord-live-title strong{display:block;color:#fff;font-size:15px;overflow-wrap:anywhere}
+.discord-live-title span{display:block;margin-top:4px;color:#aeb0bd;font-size:11px}
+.discord-live-dot{width:8px;height:8px;border-radius:50%;background:#3ba55c;box-shadow:0 0 10px #3ba55c}
+.discord-live-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:15px 20px}
+.discord-live-stat{padding:12px;border:1px solid rgba(255,255,255,.08);border-radius:9px;background:rgba(255,255,255,.025)}
+.discord-live-stat strong{display:block;color:#fff;font-size:22px;font-weight:800}
+.discord-live-stat span{display:block;margin-top:3px;color:#aeb0bd;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.discord-live-content{padding:0 20px 18px}
+.discord-live-label{margin:8px 0 10px;color:#aeb0bd;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.discord-channel-list,.discord-member-list{display:flex;flex-wrap:wrap;gap:7px}
+.discord-channel{padding:7px 10px;border:1px solid rgba(255,255,255,.09);border-radius:7px;color:#d9dbe4;font-size:11px;background:rgba(255,255,255,.035)}
+.discord-member{display:flex;align-items:center;gap:7px;padding:5px 9px 5px 5px;border:1px solid rgba(255,255,255,.08);border-radius:30px;color:#e5e5eb;font-size:11px;background:rgba(255,255,255,.035)}
+.discord-member img{width:23px;height:23px;border-radius:50%;object-fit:cover}
+.discord-member i{width:7px;height:7px;border-radius:50%;background:#3ba55c}
+.discord-live-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-top:1px solid rgba(255,255,255,.09)}
+.discord-live-status{color:#9da0ae;font-size:10px}
+.discord-live-join{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border-radius:7px;background:#5865f2;color:white;text-decoration:none;font-size:11px;font-weight:800;transition:filter .2s,transform .2s}
+.discord-live-join:hover{filter:brightness(1.12);transform:translateY(-1px)}
+@media(max-width:760px){.discord-community{padding:58px 0}.discord-community-inner{grid-template-columns:1fr;gap:30px}.discord-live-card{max-width:480px;margin-inline:auto}}
 </style>
 
 </head>
@@ -76,9 +97,24 @@
     <p>Acompanhe a comunidade, veja quem está online e acesse os canais oficiais do servidor.</p>
     <a class="button primary" href="https://discord.gg/QbeEnRxfF" target="_blank" rel="noopener noreferrer">Acessar servidor</a>
    </div>
-   <div class="discord-widget-frame">
-    <iframe title="Widget oficial do servidor Discord Capital Roleplay" src="https://discord.com/widget?id=1553568779282419764&amp;theme=dark" width="350" height="500" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-   </div>
+   <section class="discord-live-card" aria-label="Informações ao vivo do servidor Discord">
+    <div class="discord-live-head">
+     <div class="discord-live-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19.7 5.3A18.4 18.4 0 0 0 15.2 4l-.6 1.2a16.8 16.8 0 0 0-5.2 0L8.8 4a18.4 18.4 0 0 0-4.5 1.3C1.5 9.5.7 13.6 1.1 17.7a18.2 18.2 0 0 0 5.5 2.8l1.2-2a11.8 11.8 0 0 1-1.9-.9l.5-.4a13 13 0 0 0 11.2 0l.5.4a11.8 11.8 0 0 1-1.9.9l1.2 2a18.2 18.2 0 0 0 5.5-2.8c.5-4.8-.8-8.9-3.2-12.4ZM8.6 14.8c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm6.8 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"/></svg></div>
+     <div class="discord-live-title"><strong id="discordGuildName">Capital Roleplay | Recomeço #100</strong><span>Comunidade oficial no Discord</span></div>
+     <span class="discord-live-dot" aria-label="Widget ativo"></span>
+    </div>
+    <div class="discord-live-stats">
+     <div class="discord-live-stat"><strong id="discordOnlineCount">—</strong><span>Online agora</span></div>
+     <div class="discord-live-stat"><strong id="discordChannelCount">—</strong><span>Canais públicos</span></div>
+    </div>
+    <div class="discord-live-content">
+     <p class="discord-live-label">Canais disponíveis</p>
+     <div class="discord-channel-list" id="discordChannelList"><span class="discord-channel">Carregando canais…</span></div>
+     <p class="discord-live-label">Pessoas online</p>
+     <div class="discord-member-list" id="discordMemberList"><span class="discord-channel">Carregando membros…</span></div>
+    </div>
+    <div class="discord-live-footer"><span class="discord-live-status" id="discordWidgetStatus" aria-live="polite">Sincronizando com o Discord…</span><a class="discord-live-join" href="https://discord.gg/QbeEnRxfF" target="_blank" rel="noopener noreferrer">Entrar no servidor</a></div>
+   </section>
   </div>
  </section>
  <section class="container home-about">
@@ -102,6 +138,47 @@ const menu=document.getElementById('menuToggle');
 const nav=document.getElementById('navigation');
 menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');});
 nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');menu?.setAttribute('aria-label','Abrir menu');menu?.setAttribute('aria-label','Abrir menu');}));
+</script>
+<script>
+(async function loadCapitalDiscordWidget(){
+ const endpoint="https://discord.com/api/guilds/1553568779282419764/widget.json";
+ const byId=id=>document.getElementById(id);
+ const channelBox=byId("discordChannelList");
+ const memberBox=byId("discordMemberList");
+ const status=byId("discordWidgetStatus");
+ const make=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;};
+ try{
+  const response=await fetch(endpoint,{headers:{Accept:"application/json"},cache:"no-store"});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const data=await response.json();
+  byId("discordGuildName").textContent=data.name||"Capital Roleplay";
+  byId("discordOnlineCount").textContent=Number.isFinite(data.presence_count)?data.presence_count:"—";
+  const channels=Array.isArray(data.channels)?data.channels:[];
+  const members=Array.isArray(data.members)?data.members:[];
+  byId("discordChannelCount").textContent=channels.length;
+  channelBox.replaceChildren();
+  if(channels.length){channels.slice(0,8).forEach(channel=>channelBox.append(make("span","discord-channel","# "+channel.name)));}
+  else channelBox.append(make("span","discord-channel","Nenhum canal de voz público listado"));
+  memberBox.replaceChildren();
+  if(members.length){
+   members.slice(0,8).forEach(member=>{
+    const chip=make("span","discord-member");
+    if(member.avatar_url){const avatar=make("img");avatar.src=member.avatar_url;avatar.alt="";avatar.loading="lazy";chip.append(avatar);}
+    else chip.append(make("i"));
+    chip.append(make("span","",member.username||"Membro online"));
+    memberBox.append(chip);
+   });
+  }else memberBox.append(make("span","discord-channel","Sem membros visíveis no momento"));
+  status.textContent="Atualizado agora · dados públicos do Discord";
+ }catch(error){
+  byId("discordOnlineCount").textContent="—";
+  byId("discordChannelCount").textContent="—";
+  channelBox.replaceChildren(make("span","discord-channel","Não foi possível carregar os canais."));
+  memberBox.replaceChildren(make("span","discord-channel","Consulte a comunidade pelo botão abaixo."));
+  status.textContent="Não foi possível sincronizar agora.";
+  console.warn("Discord widget:",error);
+ }
+})();
 </script>
 <script src="motion.js" defer></script></body>
 </html>
