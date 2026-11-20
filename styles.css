@@ -338,3 +338,9 @@ button,a{-webkit-tap-highlight-color:transparent}
  .dashboard-heading{align-items:flex-start;flex-direction:column}
  .admin-publish{padding:22px 18px}
 }
+
+/* Identidade textual: o site não depende de arquivos de imagem */
+.brand-name{display:inline-flex;align-items:baseline;gap:7px;font-family:var(--font-display);font-size:25px;line-height:1;letter-spacing:.045em;color:#fff;white-space:nowrap}
+.brand-name span{background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer-brand .brand-name{font-size:22px}
+@media(max-width:680px){.brand-name{font-size:22px}}
