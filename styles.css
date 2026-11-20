@@ -344,3 +344,11 @@ button,a{-webkit-tap-highlight-color:transparent}
 .brand-name span{background:var(--text-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
 .footer-brand .brand-name{font-size:22px}
 @media(max-width:680px){.brand-name{font-size:22px}}
+
+
+/* Ajuste: hero sem coluna ou painel vazio reservado para imagem */
+.hero-layout{grid-template-columns:minmax(0,1fr)!important;min-height:0!important;max-width:var(--max);padding-block:clamp(76px,11vw,132px)!important}
+.hero-copy{max-width:760px}
+.home-hero:after{display:none}
+.home-hero:before{mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.35),transparent)}
+@media(max-width:680px){.hero-layout{padding-block:64px 58px!important}}
