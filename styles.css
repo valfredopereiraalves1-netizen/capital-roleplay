@@ -112,3 +112,89 @@ body{background:radial-gradient(ellipse at 50% -20%,rgba(37,91,176,.13),transpar
  .footer-inner{min-height:104px;padding-block:16px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* === Referência visual United Roleplay: neon sunset + movimento suave === */
+:root{
+  --bg:#0b0612;--surface:#120b1d;--surface-raised:#1a1028;
+  --line:rgba(255,255,255,.12);--white:#fff;--muted:#b9adca;
+  --blue:#a855f7;--blue-light:#f0a1ff;
+  --pink:#ff3da6;--orange:#ff8a3d;--violet:#9257ff;
+  --sunset:linear-gradient(135deg,#ff8a3d 0%,#ff3da6 52%,#9257ff 100%);
+  --shadow:0 24px 70px rgba(0,0,0,.48);
+}
+html{scroll-behavior:smooth;scrollbar-color:#ff3da6 #120b1d}
+body{
+ background:
+  radial-gradient(ellipse at 82% 4%,rgba(255,61,166,.15),transparent 32%),
+  radial-gradient(ellipse at 8% 35%,rgba(146,87,255,.13),transparent 35%),
+  #0b0612;
+}
+.site-header{
+ background:rgba(11,6,18,.72);
+ border-bottom-color:rgba(255,255,255,.1);
+ backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+ transition:background .3s ease,border-color .3s ease;
+}
+.site-header nav a.active:after{
+ background:var(--sunset);box-shadow:0 0 18px rgba(255,61,166,.65);
+}
+.site-header nav .nav-cta{
+ border:1px solid rgba(255,61,166,.55);
+ color:#fff;background:linear-gradient(120deg,rgba(255,138,61,.16),rgba(255,61,166,.13),rgba(146,87,255,.18));
+ box-shadow:0 0 24px rgba(255,61,166,.12),inset 0 0 18px rgba(255,255,255,.025);
+ transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.site-header nav .nav-cta:hover{background:var(--sunset);box-shadow:0 0 32px rgba(255,61,166,.32);transform:translateY(-2px)}
+.home-hero{
+ background:
+  radial-gradient(ellipse at 82% 42%,rgba(255,61,166,.23),transparent 35%),
+  radial-gradient(ellipse at 72% 5%,rgba(255,138,61,.16),transparent 33%),
+  radial-gradient(ellipse at 8% 88%,rgba(146,87,255,.2),transparent 38%),
+  linear-gradient(125deg,#0b0612 0%,#10091a 55%,#170c25 100%);
+}
+.home-hero:before{
+ opacity:.22;
+ background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+}
+.home-hero:after{
+ border-color:rgba(255,92,177,.2);
+ box-shadow:0 0 0 42px rgba(255,61,166,.035),0 0 0 84px rgba(146,87,255,.025),inset 0 0 100px rgba(255,61,166,.1),0 0 90px rgba(255,61,166,.08);
+ animation:capital-orbit 28s linear infinite,capital-glow 5s ease-in-out infinite;
+}
+.eyebrow{color:#ff9acb}
+.eyebrow:before{background:var(--sunset);box-shadow:0 0 14px rgba(255,61,166,.7)}
+.hero-copy h1 span,.section-heading h2,.home-about h2{
+ background:var(--sunset);background-size:180% 180%;
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+ animation:capital-gradient 8s ease infinite;
+}
+.button.primary,.button:not(.secondary){
+ color:#fff;background:var(--sunset);border:0;
+ box-shadow:0 8px 30px rgba(255,61,166,.24);
+ transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+}
+.button.primary:hover,.button:not(.secondary):hover{
+ transform:translateY(-3px);filter:saturate(1.15);
+ box-shadow:0 12px 38px rgba(255,61,166,.38),0 0 55px rgba(146,87,255,.18);
+}
+.text-button:hover{color:#ff8fc8}
+.hero-art img{filter:drop-shadow(0 0 32px rgba(255,61,166,.22));animation:capital-float 7s ease-in-out infinite}
+.about-grid>*,
+.about-card,.department-card,.notice-card,.feature-card{
+ transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .35s ease,background .35s ease;
+}
+.about-card:hover,.department-card:hover,.notice-card:hover,.feature-card:hover{
+ transform:translateY(-6px);border-color:rgba(255,61,166,.4);
+ box-shadow:0 18px 48px rgba(0,0,0,.3),0 0 30px rgba(255,61,166,.08);
+}
+section{scroll-margin-top:100px}
+:focus-visible{outline:2px solid #ff65b5;outline-offset:4px}
+@keyframes capital-orbit{to{transform:translateY(-50%) rotate(360deg)}}
+@keyframes capital-glow{0%,100%{filter:brightness(.85)}50%{filter:brightness(1.25)}}
+@keyframes capital-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes capital-gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
