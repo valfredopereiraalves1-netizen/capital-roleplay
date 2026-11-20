@@ -534,3 +534,6 @@ body::before{
 @media(prefers-reduced-motion:reduce){
  .party-lights,.bulb{animation:none!important}
 }
+
+/* Correção do menu móvel: permite que o painel aberto ultrapasse o cabeçalho */
+@media(max-width:680px){.site-header{overflow:visible}}
