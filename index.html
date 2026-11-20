@@ -3,51 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#071321">
-<meta name="description" content="Capital Roleplay — acesse o portal oficial da comunidade.">
-<title>Capital Roleplay | Bem-vindo</title>
+<meta name="theme-color" content="#0d0714">
+<meta name="description" content="Capital Roleplay — portal oficial da comunidade.">
+<title>Capital Roleplay | Carregando</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--display:"Bebas Neue",Impact,sans-serif;--bg:hsl(262 50% 5%);--surface:hsl(262 45% 7%);--pink:325 100% 62%;--orange:22 100% 62%;--violet:268 80% 62%;--gold:44 100% 65%;--sunset:linear-gradient(160deg,hsl(var(--orange)) 0%,hsl(var(--pink)) 48%,hsl(var(--violet)) 100%);--text-gradient:linear-gradient(135deg,hsl(30 100% 68%) 0%,hsl(330 100% 66%) 50%,hsl(280 100% 80%) 100%);--line-gradient:linear-gradient(90deg,hsl(var(--orange)),hsl(var(--pink)),hsl(var(--violet)));--glow:hsl(var(--pink) / .28)}
+:root{--display:"Bebas Neue",Impact,sans-serif;--pink:325 100% 62%;--orange:22 100% 62%;--violet:268 80% 62%;--text-gradient:linear-gradient(135deg,hsl(30 100% 68%),hsl(330 100% 66%) 50%,hsl(280 100% 80%));--line-gradient:linear-gradient(90deg,hsl(var(--orange)),hsl(var(--pink)),hsl(var(--violet)))}
 *{box-sizing:border-box}
 html,body{width:100%;min-height:100%;margin:0}
-body{min-height:100svh;overflow:hidden;background:var(--bg);color:#fff;font-family:Inter,Arial,sans-serif}
-.entry{position:relative;isolation:isolate;display:grid;place-items:center;min-height:100svh;padding:32px 22px;overflow:hidden;background:linear-gradient(110deg,hsl(262 50% 4% / .82),hsl(268 38% 9% / .52) 52%,hsl(262 50% 4% / .82))}
-.backdrop{position:absolute;z-index:-3;inset:-5%;background-image:url("file_00000000ef14820eb7d37f862d184d27.png");background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.08);animation:cinematic-pan 26s ease-in-out infinite alternate;will-change:transform}
-.entry:before{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(110deg,hsl(262 50% 4% / .86),hsl(268 38% 9% / .58) 48%,hsl(262 50% 4% / .8)),linear-gradient(0deg,hsl(262 55% 2% / .58),transparent 55%);pointer-events:none}
-.entry:after{content:"";position:absolute;z-index:2;inset:18px;border:1px solid hsl(0 0% 100% / .1);pointer-events:none}
-.grid{position:absolute;z-index:-1;inset:0;opacity:.13;background-image:linear-gradient(hsl(var(--violet) / .16) 1px,transparent 1px),linear-gradient(90deg,rgba(180,215,255,.12) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse at center,#000,transparent 78%)}
-.light-sweep{position:absolute;z-index:0;top:-40%;bottom:-40%;left:-45%;width:26%;pointer-events:none;background:linear-gradient(90deg,transparent,hsl(var(--orange) / .07) 28%,hsl(var(--pink) / .2) 50%,hsl(var(--violet) / .1) 72%,transparent);filter:blur(20px);transform:skewX(-18deg);animation:sweep 11s linear infinite}
-.pulse-orb{position:absolute;z-index:0;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px hsl(var(--pink) / .55),0 0 34px 10px hsl(var(--violet) / .22);opacity:.65;pointer-events:none;animation:float 8s ease-in-out infinite}
-.pulse-orb.one{top:22%;left:14%}
-.pulse-orb.two{right:16%;bottom:24%;width:4px;height:4px;animation-delay:-4s}
-.glow-ring{position:absolute;z-index:-1;width:min(76vw,720px);aspect-ratio:1;border:1px solid hsl(var(--pink) / .18);border-radius:50%;box-shadow:0 0 0 36px hsl(var(--pink) / .025),0 0 0 76px hsl(var(--violet) / .02),inset 0 0 100px hsl(var(--pink) / .1);animation:ring 14s ease-in-out infinite}
-.content{position:relative;z-index:1;width:min(780px,100%);text-align:center;animation:arrive 1.1s cubic-bezier(.2,.7,.2,1) both}
-.kicker{display:inline-flex;align-items:center;gap:13px;margin:0 0 24px;color:hsl(330 100% 78%);font-size:10px;font-weight:800;letter-spacing:.34em;text-transform:uppercase}
-.kicker:before,.kicker:after{content:"";width:38px;height:1px;background:var(--line-gradient)}
-.kicker:after{transform:rotate(180deg)}
-h1{margin:0;font-family:var(--display);font-size:clamp(66px,12vw,138px);font-weight:400;line-height:.82;letter-spacing:.035em;text-shadow:0 12px 48px rgba(0,0,0,.65)}
-h1 span{display:block;margin-top:13px;background:var(--text-gradient);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:0 0 34px hsl(var(--pink) / .24),0 12px 48px rgba(0,0,0,.55)}
-.subtitle{margin:30px auto 0;color:hsl(270 15% 76%);font-size:clamp(11px,1.5vw,13px);font-weight:600;letter-spacing:.24em;text-transform:uppercase}
-.enter{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:16px;min-width:224px;min-height:60px;margin-top:46px;padding:0 32px;overflow:hidden;border:1px solid hsl(var(--pink) / .48);border-radius:4px;background:var(--sunset);box-shadow:0 12px 42px hsl(var(--pink) / .22),inset 0 1px rgba(255,255,255,.22);color:#fff;font:800 11px Inter,Arial,sans-serif;letter-spacing:.22em;text-decoration:none;text-transform:uppercase;transition:transform .3s ease,box-shadow .3s ease,filter .3s ease}
-.enter:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 18%,rgba(255,255,255,.28) 48%,transparent 76%);transform:translateX(-125%);transition:transform .8s ease}
-.enter:hover{transform:translateY(-4px);filter:brightness(1.12);box-shadow:0 18px 54px hsl(var(--pink) / .34),0 0 34px hsl(var(--violet) / .2)}
-.enter:hover:before{transform:translateX(125%)}
-.arrow{font-size:18px;line-height:1;transition:transform .3s ease}
-.enter:hover .arrow{transform:translateX(6px)}
-.footer-note{position:absolute;z-index:1;bottom:30px;left:20px;right:20px;color:hsl(270 15% 70% / .72);font-size:9px;font-weight:700;letter-spacing:.24em;text-align:center;text-transform:uppercase}
-@keyframes cinematic-pan{0%{transform:scale(1.08) translate3d(-1.2%,-.5%,0)}100%{transform:scale(1.2) translate3d(1.2%,.8%,0)}}
-@keyframes sweep{from{left:-45%}to{left:125%}}
-@keyframes float{0%,100%{transform:translate3d(0,0,0) scale(.8);opacity:.28}50%{transform:translate3d(18px,-30px,0) scale(1.25);opacity:.9}}
-@keyframes arrive{from{opacity:0;transform:translateY(24px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
-@keyframes ring{0%,100%{transform:scale(.96);opacity:.5}50%{transform:scale(1.04);opacity:.95}}
-@media(max-width:600px){.entry{padding:24px 18px}.backdrop{background-position:54% center}.entry:after{inset:10px}.glow-ring{width:110vw}.kicker{font-size:8px;letter-spacing:.23em}.kicker:before,.kicker:after{width:22px}.subtitle{max-width:290px;line-height:1.9;letter-spacing:.17em}.enter{min-width:210px;min-height:57px;margin-top:38px}.footer-note{bottom:22px;font-size:8px;letter-spacing:.15em}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.content{opacity:1;transform:none;filter:none}.backdrop{transform:scale(1.08)}}
-
-/* Tela de carregamento inspirada na referência do jogo para PC */
-.loading-screen{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;overflow:hidden;background:#090711;color:#fff;animation:loader-dismiss .7s ease 1.35s forwards;pointer-events:none}
+body{min-height:100svh;overflow:hidden;background:#090711;color:#fff;font-family:Inter,Arial,sans-serif}
+.loading-screen{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden;background:#090711}
 .loading-screen:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(12,8,20,.92),rgba(18,8,25,.68),rgba(9,7,18,.9)),url("20261115_091306.jpeg") center/cover no-repeat;transform:scale(1.035);animation:loader-image 8s ease-in-out infinite alternate}
 .loading-screen:after{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.12);pointer-events:none}
 .loading-inner{position:relative;z-index:1;width:min(420px,calc(100% - 56px));text-align:center;animation:loader-arrive .75s cubic-bezier(.2,.7,.2,1) both}
@@ -60,35 +27,19 @@ h1 span{display:block;margin-top:13px;background:var(--text-gradient);background
 @keyframes loader-progress{0%{transform:translateX(-110%)}100%{transform:translateX(290%)}}
 @keyframes loader-image{from{transform:scale(1.035) translate3d(-.5%,0,0)}to{transform:scale(1.12) translate3d(.5%,-.5%,0)}}
 @keyframes loader-arrive{from{opacity:0;transform:translateY(15px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
-@keyframes loader-dismiss{to{opacity:0;visibility:hidden}}
 @media(max-width:600px){.loading-screen:after{inset:10px}.loading-caption{font-size:8px;letter-spacing:.2em}}
-@media(prefers-reduced-motion:reduce){.loading-screen{animation:loader-dismiss .25s ease .15s forwards}.loading-screen:before,.loading-track span,.loading-inner{animation:none!important}}
-
+@media(prefers-reduced-motion:reduce){.loading-screen:before,.loading-track span,.loading-inner{animation:none!important}}
 </style>
+<script>window.setTimeout(function(){window.location.replace("portal.html")},1500)</script>
 </head>
 <body>
-<div class="loading-screen" role="status" aria-label="Carregando Capital Roleplay">
+<main class="loading-screen" role="status" aria-label="Carregando Capital Roleplay">
  <div class="loading-inner">
   <div class="loading-brand">CAPITAL <span>ROLEPLAY</span></div>
   <p class="loading-caption">Preparando sua experiência</p>
   <div class="loading-track" aria-hidden="true"><span></span></div>
   <p class="loading-foot">Portal oficial · Roblox Roleplay</p>
  </div>
-</div>
-<main class="entry">
- <div class="backdrop" aria-hidden="true"></div>
- <div class="grid" aria-hidden="true"></div>
- <div class="light-sweep" aria-hidden="true"></div>
- <div class="pulse-orb one" aria-hidden="true"></div>
- <div class="pulse-orb two" aria-hidden="true"></div>
- <div class="glow-ring" aria-hidden="true"></div>
- <section class="content" aria-label="Entrada Capital Roleplay">
-  <p class="kicker">Roblox · Discord · Roleplay</p>
-  <h1>CAPITAL <span>ROLEPLAY</span></h1>
-  <p class="subtitle">Sua próxima história começa aqui</p>
-  <a class="enter" href="portal.html">ENTRAR <span class="arrow" aria-hidden="true">→</span></a>
- </section>
- <div class="footer-note">Portal oficial · Capital Roleplay</div>
 </main>
 </body>
 </html>
