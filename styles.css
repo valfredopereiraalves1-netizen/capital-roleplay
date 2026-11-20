@@ -67,3 +67,23 @@ input,textarea,select{max-width:100%}
  .crest{width:145px;height:145px}
  .page-title,.page-content{width:calc(100% - 28px)}
 }
+
+
+/* Tipografia inspirada no letreiro oficial da Capital Roleplay */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&display=swap');
+.brand-type{display:block;font-family:'Teko',Impact,sans-serif;font-size:24px;font-weight:700;line-height:.78;letter-spacing:1.1px;color:#f4f5fb;text-transform:uppercase}
+.brand-type small{display:block;margin-top:5px;font-family:'Teko',Impact,sans-serif;font-size:13px;font-weight:600;line-height:1;letter-spacing:4px;color:#7da9ff}
+.hero h1.hero-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin:18px 0 20px;font-family:'Teko',Impact,sans-serif;font-weight:700;line-height:.76;letter-spacing:1px;text-transform:uppercase}
+.hero-wordmark .wordmark-main{font-size:clamp(92px,12vw,150px);color:#f4f4f5;letter-spacing:1px;text-shadow:0 5px 0 #0b1425,0 12px 28px #0008}
+.hero-wordmark .wordmark-main .blue-letter{color:#245cff}
+.hero-wordmark .wordmark-sub{padding-left:8px;margin-top:10px;font-size:clamp(30px,4vw,44px);font-weight:600;letter-spacing:clamp(9px,1.8vw,18px);color:#f5f6fa;line-height:1;text-shadow:0 3px 12px #0008}
+@media(max-width:700px){
+ .brand-type{font-size:22px}
+ .brand-type small{font-size:12px}
+ .hero-wordmark .wordmark-main{font-size:clamp(76px,19vw,116px)}
+ .hero-wordmark .wordmark-sub{font-size:34px;letter-spacing:10px}
+}
+@media(max-width:380px){
+ .hero-wordmark .wordmark-main{font-size:70px}
+ .hero-wordmark .wordmark-sub{font-size:29px;letter-spacing:8px}
+}
