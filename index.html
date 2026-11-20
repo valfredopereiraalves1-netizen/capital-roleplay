@@ -17,7 +17,7 @@ body{min-height:100svh;overflow:hidden;background:#100817;color:#fff;font-family
 .entry{position:relative;isolation:isolate;display:grid;place-items:center;min-height:100svh;padding:32px 22px;overflow:hidden;background-image:linear-gradient(115deg,rgba(10,6,18,.88),rgba(13,7,20,.66) 48%,rgba(10,6,18,.84)),url("file_00000000ef14820eb7d37f862d184d27.png");background-size:cover;background-position:center;background-repeat:no-repeat}
 .entry:before{content:"";position:absolute;z-index:-1;inset:-20%;background:radial-gradient(ellipse at 50% 45%,hsl(var(--pink)/.2),transparent 35%),radial-gradient(ellipse at 18% 85%,hsl(var(--violet)/.24),transparent 34%),radial-gradient(ellipse at 85% 15%,hsl(var(--orange)/.17),transparent 30%);animation:ambient 12s ease-in-out infinite alternate}
 .entry:after{content:"";position:absolute;z-index:-1;inset:18px;border:1px solid rgba(255,255,255,.13);pointer-events:none}
-.grid{position:absolute;z-index:-1;inset:0;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:68px 68px;mask-image:radial-gradient(ellipse at center,#000,transparent 76%)}
+.light-sweep{position:absolute;z-index:0;top:-35%;bottom:-35%;left:-45%;width:28%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.035) 28%,hsl(var(--pink)/.12) 50%,rgba(255,255,255,.045) 72%,transparent);filter:blur(18px);transform:skewX(-18deg);animation:sweep 8s linear infinite}\n.pulse-orb{position:absolute;z-index:0;width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px hsl(var(--pink)/.7),0 0 34px 10px hsl(var(--violet)/.35);opacity:.7;pointer-events:none;animation:float 6s ease-in-out infinite}\n.pulse-orb.one{top:22%;left:14%}.pulse-orb.two{right:16%;bottom:24%;width:6px;height:6px;animation-delay:-3s}\n.grid{position:absolute;z-index:-1;inset:0;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:68px 68px;mask-image:radial-gradient(ellipse at center,#000,transparent 76%)}
 .glow-ring{position:absolute;z-index:-1;width:min(76vw,720px);aspect-ratio:1;border:1px solid rgba(255,255,255,.12);border-radius:50%;box-shadow:0 0 0 34px rgba(255,255,255,.025),0 0 0 72px rgba(255,255,255,.018),inset 0 0 90px hsl(var(--pink)/.09);animation:ring 10s ease-in-out infinite}
 .content{width:min(760px,100%);text-align:center;animation:arrive 1s cubic-bezier(.2,.7,.2,1) both}
 .kicker{display:inline-flex;align-items:center;gap:12px;margin:0 0 22px;color:#f2c4e8;font-size:10px;font-weight:800;letter-spacing:.34em;text-transform:uppercase}
@@ -32,7 +32,7 @@ h1 span{display:block;margin-top:12px;background:linear-gradient(100deg,#fff 5%,
 .arrow{font-size:18px;line-height:1;transition:transform .25s ease}
 .enter:hover .arrow{transform:translateX(5px)}
 .footer-note{position:absolute;bottom:28px;left:20px;right:20px;color:rgba(255,255,255,.48);font-size:9px;font-weight:700;letter-spacing:.22em;text-align:center;text-transform:uppercase}
-@keyframes arrive{from{opacity:0;transform:translateY(24px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes sweep{from{left:-45%}to{left:125%}}\n@keyframes float{0%,100%{transform:translate3d(0,0,0) scale(.8);opacity:.35}50%{transform:translate3d(18px,-28px,0) scale(1.25);opacity:1}}\n@keyframes arrive{from{opacity:0;transform:translateY(24px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
 @keyframes ambient{from{transform:translate3d(-2%,-1%,0) scale(.96)}to{transform:translate3d(2%,2%,0) scale(1.06)}}
 @keyframes ring{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.04);opacity:1}}
 @keyframes shine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -42,7 +42,7 @@ h1 span{display:block;margin-top:12px;background:linear-gradient(100deg,#fff 5%,
 </head>
 <body>
 <main class="entry">
- <div class="grid" aria-hidden="true"></div>
+ <div class="grid" aria-hidden="true"></div>\n <div class="light-sweep" aria-hidden="true"></div>\n <div class="pulse-orb one" aria-hidden="true"></div>\n <div class="pulse-orb two" aria-hidden="true"></div>
  <div class="glow-ring" aria-hidden="true"></div>
  <section class="content" aria-label="Entrada Capital Roleplay">
   <p class="kicker">Roblox · Discord · Roleplay</p>
