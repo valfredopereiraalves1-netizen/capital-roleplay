@@ -387,3 +387,113 @@ body.motion-ready .motion-hero{animation:cr-enter-up .85s cubic-bezier(.2,.7,.2,
  .home-hero:after,.eyebrow:before{animation:none!important}
  .button:hover:after{animation:none!important}
 }
+
+
+/* CAPITAL ROLEPLAY — iluminação ambiente e efeitos de luz premium */
+body{position:relative;isolation:isolate}
+body::before{
+ content:"";position:fixed;z-index:0;inset:-35%;pointer-events:none;
+ background:
+  radial-gradient(ellipse at 18% 28%,hsl(var(--pink) / .13),transparent 24%),
+  radial-gradient(ellipse at 78% 24%,hsl(var(--violet) / .15),transparent 27%),
+  radial-gradient(ellipse at 52% 82%,hsl(var(--orange) / .07),transparent 24%);
+ filter:blur(34px);opacity:.78;transform:translate3d(-2%,0,0) scale(1);
+ animation:cr-ambient-drift 22s ease-in-out infinite alternate;
+}
+.site-header,body>main,.site-footer{position:relative;z-index:1}
+.site-header{overflow:hidden}
+.site-header::after{
+ content:"";position:absolute;left:-45%;top:0;width:34%;height:1px;
+ background:linear-gradient(90deg,transparent,hsl(var(--pink) / .9),hsl(var(--violet)),transparent);
+ filter:drop-shadow(0 0 7px hsl(var(--pink) / .8));
+ animation:cr-header-light 9s ease-in-out infinite;pointer-events:none;
+}
+.home-hero{
+ background-size:160% 160%;
+ animation:cr-hero-light 18s ease-in-out infinite alternate;
+}
+.home-hero::before{
+ content:"";position:absolute;z-index:0;inset:0;pointer-events:none;
+ background:
+  linear-gradient(112deg,transparent 25%,hsl(var(--pink) / .055) 42%,hsl(var(--violet) / .09) 50%,transparent 66%),
+  radial-gradient(ellipse at 78% 45%,hsl(var(--pink) / .12),transparent 38%);
+ background-size:220% 100%,100% 100%;
+ animation:cr-light-sweep 13s ease-in-out infinite;
+}
+.hero-copy{position:relative;z-index:1}
+.hero-copy h1 span{
+ filter:drop-shadow(0 0 22px hsl(var(--pink) / .22));
+ background-size:220% 220%;
+}
+.eyebrow:before{
+ width:30px;height:2px;border-radius:10px;
+ box-shadow:0 0 8px hsl(var(--orange) / .8),0 0 18px hsl(var(--pink) / .55);
+}
+.button,.feature-link,.form-card,.admin-card,.announcement-item{isolation:isolate}
+.button{
+ box-shadow:0 8px 28px hsl(var(--pink) / .12);
+ transition:transform .3s cubic-bezier(.2,.75,.25,1),box-shadow .3s ease,filter .3s ease;
+}
+.button::after{
+ opacity:.0;background:linear-gradient(105deg,transparent 15%,rgba(255,255,255,.34) 48%,transparent 78%);
+ background-size:230% 100%;
+}
+.button:hover{
+ box-shadow:0 12px 38px hsl(var(--pink) / .28),0 0 24px hsl(var(--violet) / .18);
+}
+.button:hover::after{opacity:1;animation:cr-button-shine 1.15s ease}
+.discord-button{
+ border-color:hsl(268 90% 76% / .58)!important;
+ background:linear-gradient(115deg,hsl(268 70% 54% / .2),hsl(var(--pink) / .12),hsl(var(--violet) / .2))!important;
+ box-shadow:0 0 0 1px hsl(var(--violet) / .08),0 8px 28px hsl(var(--violet) / .18),inset 0 0 22px hsl(var(--violet) / .08);
+ animation:cr-discord-pulse 4.8s ease-in-out infinite;
+}
+.discord-button:hover{
+ border-color:hsl(var(--pink) / .8)!important;
+ background:var(--sunset)!important;
+ animation:none;transform:translateY(-4px);
+}
+.feature-link{overflow:hidden}
+.feature-link::before{
+ content:"";position:absolute;z-index:-1;inset:-1px;pointer-events:none;
+ background:linear-gradient(115deg,transparent 20%,hsl(var(--pink) / .13) 48%,hsl(var(--violet) / .12) 56%,transparent 78%);
+ background-size:220% 100%;opacity:0;transition:opacity .35s ease;
+}
+.feature-link:hover::before{opacity:1;animation:cr-card-light 1.5s ease}
+.feature-link>b{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.feature-link:hover>b{transform:translate(3px,-2px);border-color:hsl(var(--pink) / .55);box-shadow:0 0 22px hsl(var(--pink) / .2)}
+.page-heading,.section-heading{position:relative}
+.page-heading::after,.section-heading::after{
+ content:"";position:absolute;bottom:-1px;left:0;width:clamp(70px,15%,160px);height:1px;
+ background:var(--line-gradient);box-shadow:0 0 12px hsl(var(--pink) / .45);
+}
+.site-footer{overflow:hidden}
+.site-footer::before{
+ content:"";position:absolute;top:0;left:-35%;width:35%;height:1px;
+ background:linear-gradient(90deg,transparent,hsl(var(--pink) / .7),hsl(var(--violet) / .7),transparent);
+ animation:cr-footer-light 12s linear infinite;
+}
+@keyframes cr-ambient-drift{
+ 0%{transform:translate3d(-2%,-1%,0) scale(.96)}
+ 50%{transform:translate3d(2%,1.5%,0) scale(1.04)}
+ 100%{transform:translate3d(-1%,2%,0) scale(1)}
+}
+@keyframes cr-header-light{0%,12%{left:-45%;opacity:0}28%,70%{opacity:1}100%{left:115%;opacity:0}}
+@keyframes cr-hero-light{0%{background-position:0% 40%}100%{background-position:100% 60%}}
+@keyframes cr-light-sweep{0%,12%{background-position:180% 0,center}78%,100%{background-position:-120% 0,center}}
+@keyframes cr-button-shine{from{background-position:120% 0}to{background-position:-120% 0}}
+@keyframes cr-discord-pulse{
+ 0%,100%{box-shadow:0 0 0 1px hsl(var(--violet) / .08),0 8px 28px hsl(var(--violet) / .16),inset 0 0 22px hsl(var(--violet) / .06)}
+ 50%{box-shadow:0 0 0 1px hsl(var(--pink) / .24),0 0 28px hsl(var(--pink) / .2),0 10px 34px hsl(var(--violet) / .2),inset 0 0 26px hsl(var(--pink) / .1)}
+}
+@keyframes cr-card-light{0%{background-position:130% 0}100%{background-position:-130% 0}}
+@keyframes cr-footer-light{0%{left:-35%;opacity:0}15%,80%{opacity:1}100%{left:110%;opacity:0}}
+@media(max-width:680px){
+ body::before{filter:blur(48px);opacity:.58}
+ .home-hero{animation-duration:24s}
+ .discord-button{animation-duration:5.8s}
+}
+@media(prefers-reduced-motion:reduce){
+ body::before,.site-header::after,.home-hero,.home-hero::before,.discord-button,.site-footer::before{animation:none!important}
+ .button:hover::after,.feature-link:hover::before{animation:none!important}
+}
